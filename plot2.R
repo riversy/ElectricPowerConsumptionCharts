@@ -4,7 +4,6 @@
 ###
 
 source("ElectricPowerConsumptionCharts/data.R")
-library(dplyr)
 
 createChart <- function(){
 
@@ -12,6 +11,8 @@ createChart <- function(){
     data$Global_active_power <- as.numeric(format(data$Global_active_power))
     data$num <- seq(1, 3, length.out = nrow(data))
 
+    par(ps = 12)
+    
     plot(
         data$num,
         data$Global_active_power,     
