@@ -5,10 +5,11 @@
 getData <- function(file = "household_power_consumption.txt"){
 
     data <- read.csv(file, sep = ";")
-    data$Date <- strptime(data$Date,"%d/%m/%Y")
-    data[
-        data$Date == strptime("2007-02-01", "%Y-%m-%d") | 
-        data$Date == strptime("2007-02-02", "%Y-%m-%d"),
+    data$Date <- dmy(data$Date)
+    sub_data <- data[
+        data$Date == ymd("2007-02-01") | 
+        data$Date == ymd("2007-02-02"),
     ]
-
+    sub_data$Global_active_power <- as.numeric(format(sub_data$Global_active_power))
+    sub_data
 }
