@@ -15,7 +15,7 @@ createChart <- function(){
     data$num <- seq(1, 3, length.out = nrow(data))
     
     # Set default font size
-    par(ps = 12) 
+    par(ps = 12, mfrow = c(1, 1)) 
 
     # Open plot device and print first chart
     plot(

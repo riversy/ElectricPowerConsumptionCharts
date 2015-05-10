@@ -12,7 +12,7 @@ createChart <- function(){
     data$Global_active_power <- as.numeric(format(data$Global_active_power))
     
     # Set default font size
-    par(ps = 12) 
+    par(ps = 12, mfrow = c(1, 1)) 
     
     # Print Histogram
     hist(

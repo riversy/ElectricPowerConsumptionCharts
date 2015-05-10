@@ -11,7 +11,7 @@ createChart <- function(){
     data$Global_active_power <- as.numeric(format(data$Global_active_power))
     data$num <- seq(1, 3, length.out = nrow(data))
 
-    par(ps = 12)
+    par(ps = 12, mfrow = c(1, 1)) 
     
     plot(
         data$num,
